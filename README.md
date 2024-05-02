@@ -2,7 +2,7 @@
 Neetcode 150 problems and answers. Language used - TypeScript
 
 <details>
-  <summary>1. 217-Contains Duplicate </summary>
+  <summary>1. 217 - Contains Duplicate </summary>
   
   ### Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
 
@@ -50,5 +50,57 @@ Neetcode 150 problems and answers. Language used - TypeScript
       }
       return false; // If we've gone through the loop without finding duplicates, return false
     }
+  ```
+</details>
+
+<details>
+  <summary>2. 242 - Valid Anagram </summary>
+  
+  ### Given two strings s and t, return true if t is an anagram of s, and false otherwise. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+
+  **Answer 1**
+  ```ts
+    function isAnagram(s: string, t: string): boolean {
+      // Using Map
+      if (s.length !== t.length) return false;
+  
+      const store = new Map();
+      for (let char of s) {
+          const val = store.has(char) ? store.get(char) + 1 : 1;
+          store.set(char, val);
+      }
+  
+      for (let char of t) {
+          if (store.has(char)) {
+              const val = store.get(char);
+              if (val <= 0) return false;
+  
+              store.set(char, val - 1);
+          }
+          else {
+              return false;
+          }
+      }
+      return true;
+  };
+  ```
+
+ **Answer 2**
+  ```ts
+    function isAnagram(s: string, t: string): boolean {
+      // Using Map, +/- map in single pass
+      if (s.length !== t.length) return false;
+  
+      const store = new Map();
+      for (let i = 0; i < s.length; i++) {
+          store.set(s[i], (store.get(s[i]) || 0)  + 1);
+          store.set(t[i], (store.get(t[i]) || 0) - 1);
+      }
+  
+      for (let [_, v] of store) {
+          if (v !== 0) return false;
+      }
+      return true;
+  };
   ```
 </details>
