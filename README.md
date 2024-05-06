@@ -104,3 +104,29 @@ Neetcode 150 problems and answers. Language used - TypeScript
   };
   ```
 </details>
+
+<details>
+  <summary>3. 1 - Two Sum </summary>
+### Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+  **Answer 1**
+  ```ts
+    function twoSum(nums: number[], target: number): number[] {
+    const store = new Map();
+    const result: number[] = [];
+
+    for(let [i, n] of nums.entries()) {
+        const val = target - n;
+        if (store.has(val)) {
+            return [i, store.get(val)]
+        }
+        store.set(n, i);
+    }
+
+    return result;
+};
+  ```
+
+ **Answer 2**
+ - In case if we want to solve it without using HashMap, then use **Two pointers approach**, but that needs Sorting the array and we need to preserve the index by [(val1, index1), (val2, index2) ...] and it is not a best approach.
+</details>
