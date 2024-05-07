@@ -133,7 +133,7 @@ Neetcode 150 problems and answers. Language used - TypeScript
 </details>
 
 <details>
-  <summary>125. Valid Palindrome </summary>
+  <summary>4. 125 - Valid Palindrome </summary>
   
   ### A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
 
