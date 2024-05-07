@@ -131,3 +131,57 @@ Neetcode 150 problems and answers. Language used - TypeScript
  **Answer 2**
  - In case if we want to solve it without using HashMap, then use **Two pointers approach**, but that needs Sorting the array and we need to preserve the index by [(val1, index1), (val2, index2) ...] and it is not a best approach.
 </details>
+
+<details>
+  <summary>125. Valid Palindrome </summary>
+  
+  ### A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
+
+  **Answer 1**
+  ```ts
+    function isPalindrome(s: string): boolean {
+      let i = 0;
+      let j = s.length - 1;
+  
+      function isAlphanumeric(str) {
+          return /^[a-zA-Z0-9]+$/.test(str);
+      }
+  
+      while(i<j) {
+          if (!isAlphanumeric(s[i])) {
+              i++;
+          }
+          else if (!isAlphanumeric(s[j])) {
+              j--;
+          }
+          else if (s[i].toLowerCase() === s[j].toLowerCase()) {
+              i++;
+              j--;
+          }
+          else {
+              return false;
+          }
+      }
+      return true;
+      };
+  };
+  ```
+
+ **Answer 2**
+ - Clean the whole string initially and loop through
+```ts
+function isPalindrome(s: string): boolean {
+    const str = s.replace(/[^0-9a-z]/gi, '').toLowerCase();
+    let i = 0;
+    let j = str.length - 1;
+
+    while (i < j) {
+        if (str[i] !== str[j]) return false;
+        i++;
+        j--;
+    }
+
+    return true;
+};
+```
+</details>
