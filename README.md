@@ -244,3 +244,31 @@ function isPalindrome(s: string): boolean {
   };
   ```
 </details>
+
+<details>
+  <summary>6. 704 - Binary Search </summary>
+  
+  ### Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.
+
+  **Answer 1**
+  ```ts
+    function search(nums: number[], target: number): number {
+      let low = 0;
+      let high = nums.length - 1;
+  
+      while(low <= high) {
+          let mid = Math.floor((low + high) / 2); // CAUTION but nitpick: enclose low + high with brackets.
+          if (target === nums[mid]) return mid;
+          else if (target > nums[mid]) {
+              low = mid + 1;
+          }
+          else if (target < nums[mid]) {
+              high = mid - 1;
+          }
+      }
+  
+      return -1;
+  };
+  ```
+</details>
+
