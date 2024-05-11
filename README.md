@@ -214,3 +214,33 @@ function isPalindrome(s: string): boolean {
   };
   ```
 </details>
+
+<details>
+  <summary>6. 20 - Valid Parentheses </summary>
+  
+  ### Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+  **Answer 1**
+  ```ts
+    function isValid(s: string): boolean {
+      if (s.length % 2 !== 0) return false;
+  
+      const stk: string[] = [];
+  
+      for (let i = 0; i < s.length; i++) {
+          if(s[i] === '('   || s[i] === '{' || s[i] === '['){
+             stk.push(s[i]);
+          }
+          else {
+              const p = stk.pop();
+  
+              if(s[i] === ')' && p !== '(' || s[i] === '}' && p !== '{'  || s[i] === ']' && p !== '[') {
+                  return false;
+              }
+          }
+      }
+  
+      return stk.length === 0;
+  };
+  ```
+</details>
