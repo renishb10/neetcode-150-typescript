@@ -272,3 +272,26 @@ function isPalindrome(s: string): boolean {
   ```
 </details>
 
+<details>
+  <summary>7. 206 - Reverse Linked List </summary>
+  
+  ### Given the head of a singly linked list, reverse the list, and return the reversed list.
+
+  **Answer 1**
+  ```ts
+    function reverseList(head: ListNode | null): ListNode | null {
+        let currentNode = head;
+        let prevNode = null;
+    
+        while(currentNode !== null) {
+            let nextNode = currentNode.next;
+            currentNode.next = prevNode;
+            prevNode = currentNode;
+            currentNode = nextNode;
+        }
+    
+        return prevNode;
+    };
+  ```
+</details>
+
