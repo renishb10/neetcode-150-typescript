@@ -246,7 +246,7 @@ function isPalindrome(s: string): boolean {
 </details>
 
 <details>
-  <summary>6. 704 - Binary Search </summary>
+  <summary>7. 704 - Binary Search </summary>
   
   ### Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.
 
@@ -273,7 +273,7 @@ function isPalindrome(s: string): boolean {
 </details>
 
 <details>
-  <summary>7. 206 - Reverse Linked List </summary>
+  <summary>8. 206 - Reverse Linked List </summary>
   
   ### Given the head of a singly linked list, reverse the list, and return the reversed list.
 
@@ -296,7 +296,7 @@ function isPalindrome(s: string): boolean {
 </details>
 
 <details>
-  <summary>8. 21 - Merge Two Sorted Lists </summary>
+  <summary>9. 21 - Merge Two Sorted Lists </summary>
   
   ### Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.
 
@@ -327,7 +327,7 @@ function isPalindrome(s: string): boolean {
 </details>
 
 <details>
-  <summary>8. 202 - Happy Number </summary>
+  <summary>10. 202 - Happy Number </summary>
   
   ### Write an algorithm to determine if a number n is happy.
   A happy number is a number defined by the following process:
@@ -365,7 +365,7 @@ function isPalindrome(s: string): boolean {
 </details>
 
 <details>
-  <summary>9. 66 - Plus One </summary>
+  <summary>11. 66 - Plus One </summary>
   
   ### You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's.
 
